@@ -1,17 +1,19 @@
+import styles from "./App.module.css";
 import { Header } from "./components/Header";
-import { Post } from "./Post";
-
+import { Sidebar } from "./components/Sidebar.jsx";
 import "./global.css";
-
+import { Post } from "./Post.jsx";
 export default function App() {
   return (
     <div>
       <Header />
-      <Post
-        author="Diego Fernandes"
-        content="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime itaque quas corporis beatae veritatis, reprehenderit asperiores vitae quod possimus qui dignissimos unde deleniti consequatur quae, repellat debitis sunt, est rerum!"
-      />
-      <Post author="Gabriel Buzzi" content="Um novo post muito legal" />
+
+      <div className={styles.wrapper}>
+        <Sidebar />
+        <main>
+          <Post author="Gustavo Abreu" content="First messagem o app" />
+        </main>
+      </div>
     </div>
   );
 }
