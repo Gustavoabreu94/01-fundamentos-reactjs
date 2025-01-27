@@ -1,3 +1,5 @@
+import { Avatar } from "./Avatar";
+import { Comment } from "./Comment";
 import styles from "./Post.module.css";
 
 export function Post() {
@@ -5,11 +7,7 @@ export function Post() {
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <img
-            className={styles.avatar}
-            src="https://github.com/Gustavoabreu94.png"
-            alt="Foto de perfil"
-          />
+          <Avatar hasBorder src="https://github.com/Gustavoabreu94.png" />
           <div className={styles.authorInfo}>
             <strong>Gustavo Abreu</strong>
             <span> Web Developer</span>
@@ -33,6 +31,22 @@ export function Post() {
           <a href="#">#novoprojeto </a> <a href="#">#nlw</a>{" "}
           <a href="#">#rocketseat</a>
         </p>
+      </div>
+
+      <form className={styles.commentForm}>
+        <strong>Deixei seu feedback</strong>
+
+        <textarea placeholder="Deixe um comentário" />
+
+        <footer>
+          <button type="submit">Publicar</button>
+        </footer>
+      </form>
+
+      <div className={styles.commentLisst}>
+        <Comment />
+        <Comment />
+        <Comment />
       </div>
     </article>
   );
